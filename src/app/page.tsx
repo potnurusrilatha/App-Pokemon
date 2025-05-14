@@ -14,6 +14,7 @@ const article:HomeGridArticleType [] = [
 export default function Home() {
   return (
     <div className="home-grid">
+      
       {article.map((item:HomeGridArticleType, index:number) => <HomeGridArticle key={index} {...item}/>)}
      {/* <HomeGridArticle title="Sunny Days" image="/beach.jpg" style="primary"/> */}
     </div>

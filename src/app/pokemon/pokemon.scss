@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+
+.pokemon {
+    &__container {
+        @include page-layout($indent__xl, auto);
+        text-align: center;
+
+        &--button {
+            @include button-style($color-bright-sun);
+        }
+    }
+}
