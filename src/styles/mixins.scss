@@ -1,0 +1,99 @@
+
+
+
+@mixin flexrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin page-layout($Yaxis, $Xaxis) {
+    max-width: 1440px;
+    margin: $Yaxis $Xaxis;
+
+
+}
+
+@mixin menu__item($accentColor: pink) {
+    border-bottom: 4px solid $accentColor;
+    padding: $indent__l;
+    color: $color-primary;
+
+    font : {
+    family: $font-orbitron;
+    size: 1.2rem;
+    weight: 700;
+    }
+
+    text : {
+    align:  center;
+    decoration: none;
+    transform: capitalize ;
+    }
+
+    &:hover,
+    &.active  {
+        background-color:  $accentColor;
+    }
+    @include responsive-tablet() {
+      padding: $indent__xl;
+    }
+    
+}
+
+
+@mixin home-grid-article($color: #d61212) {
+  @include flexcol;
+
+  @if ($color == $color-minsk) {
+    color: $color-bright-sun;
+
+  }@else if ($color == $color-torch-red) {
+    color: $color-white;
+  } @else if($color ==  $color-bright-sun)  {
+    color: $color-dark-gray;
+  } @else if($color == $color-mailbu) {
+        h3 {
+      order: 1;
+    }
+
+    img {
+      order:2;
+    }
+
+    color: $color-dark-gray;
+  }
+
+
+  text-align: center;
+  font {
+   font-family: $font-orbitron;
+  }
+
+  h3 {
+    background-color:  $color;
+    margin: 0;
+    padding: $indent__base 0;
+  }
+
+}
+
+@mixin responsive-tablet {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin responsive-mobile  {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+    
+  }
+}
+
