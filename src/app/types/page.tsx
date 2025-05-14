@@ -1,5 +1,6 @@
 'use client'
 import './types.scss'
+
   let allTypes:string []; 
 
 const Types = () => {
@@ -21,7 +22,7 @@ const Types = () => {
   return (
     <>
     <div className="pokemon__types">
-      {allTypes && allTypes.filter((item: string, index: number) => index < 18).map((item:string) => <a href="" className={`pokemon__content--${item}`}>{item}</a>)}
+      {allTypes && allTypes.filter((item, index) => index < 18).map((item:string, index:number) => <a key={index} href="" className={`pokemon__content--${item}`}>{item}</a>)}
     </div>
     </>
   )
